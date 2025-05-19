@@ -80,47 +80,6 @@ const mockData = {
       codeLink: "https://huggingface.co/spaces/repleeka/tawra",
     }
   ],
-//   articles: [
-//     {
-//       id: 1,
-//       title: "Understanding React Hooks Deeply",
-//       date: "April 5, 2025",
-//       excerpt:
-//         "A deep dive into how React hooks work under the hood, including custom hook patterns.",
-//       content: `
-//         <p>React hooks are one of the most powerful features introduced in React 16.8. They allow developers to use state and other React features without writing a class component.</p>
-//         <h2>useState</h2>
-//         <p>The <code>useState</code> hook allows functional components to have local state. It returns a stateful value and a function to update it.</p>
-//         <pre><code>const [count, setCount] = useState(0);</code></pre>
-//         <h2>useEffect</h2>
-//         <p>The <code>useEffect</code> hook handles side effects like data fetching, subscriptions, or manually changing the DOM in React components.</p>
-//         <p>It runs after every render by default but can be optimized with dependency arrays.</p>
-//         <pre><code>useEffect(() => {
-//   document.title = \`You clicked \${count} times\`;
-// }, [count]);</code></pre>
-//         <h2>Custom Hooks</h2>
-//         <p>You can create your own hooks to reuse logic across multiple components. For example, a <code>useFetch</code> hook to handle API calls.</p>
-//       `,
-//     },
-//     {
-//       id: 2,
-//       title: "The Future of Web Development in 2025",
-//       date: "March 18, 2025",
-//       excerpt:
-//         "Exploring trends shaping the future of frontend development including AI integration, faster frameworks, and better tooling.",
-//       content: `
-//         <p>In 2025, the web development landscape is evolving rapidly. Developers are embracing new paradigms and technologies that improve productivity and performance.</p>
-//         <h2>AI-Powered Tools</h2>
-//         <p>From GitHub Copilot to intelligent IDEs, AI is helping developers write code faster and more accurately.</p>
-//         <h2>Edge Computing</h2>
-//         <p>With platforms like Vercel and Cloudflare Workers, edge computing is becoming mainstream, enabling faster response times and better user experiences.</p>
-//         <h2>Performance Optimization</h2>
-//         <p>Tools like Lighthouse, Next.js, and SvelteKit are pushing performance metrics higher, ensuring websites load instantly and feel snappy.</p>
-//         <h2>Conclusion</h2>
-//         <p>As we move further into 2025, expect to see more innovation in tooling, collaboration between designers and developers, and smarter systems powered by machine learning.</p>
-//       `,
-//     },
-//   ],
   techStack: [
     "Python",
     "FastAPI",
@@ -174,17 +133,25 @@ const GithubIcon = () => (
     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
   </svg>
 );
-
-const LinkedInIcon = () => (
+const InstagramIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="mr-2" viewBox="0 0 16 16">
-    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+    <path d="M8 0C5.74 0 5.5.01 4.47.05 3.44.09 2.67.24 2.03.5c-.65.26-1.2.61-1.75 1.16-.55.55-.9 1.1-1.16 1.75C-.24 4.33-.09 5.1-.05 6.13.01 7.16 0 7.4 0 8s.01.84.05 1.87c.04 1.03.19 1.8.45 2.44.26.65.61 1.2 1.16 1.75.55.55 1.1.9 1.75 1.16.64.26 1.41.41 2.44.45 1.03.04 1.27.05 1.87.05s.84-.01 1.87-.05c1.03-.04 1.8-.19 2.44-.45.65-.26 1.2-.61 1.75-1.16.55-.55.9-1.1 1.16-1.75.26-.64.41-1.41.45-2.44.04-1.03.05-1.27.05-1.87s-.01-.84-.05-1.87c-.04-1.03-.19-1.8-.45-2.44-.26-.65-.61-1.2-1.16-1.75-.55-.55-1.1-.9-1.75-1.16-.64-.26-1.41-.41-2.44-.45C8.84.01 8.6 0 8 0zm0 1.44c.6 0 .84.01 1.87.05.91.04 1.41.18 1.74.3.44.17.75.37 1.08.7.33.33.53.64.7 1.08.12.33.26.83.3 1.74.04 1.03.05 1.27.05 1.87s-.01.84-.05 1.87c-.04.91-.18 1.41-.3 1.74-.17.44-.37.75-.7 1.08-.33.33-.64.53-1.08.7-.33.12-.83.26-1.74.3-1.03.04-1.27.05-1.87.05s-.84-.01-1.87-.05c-.91-.04-1.41-.18-1.74-.3-.44-.17-.75-.37-1.08-.7-.33-.33-.53-.64-.7-1.08-.12-.33-.26-.83-.3-1.74-.04-1.03-.05-1.27-.05-1.87s.01-.84.05-1.87c.04-.91.18-1.41.3-1.74.17-.44.37-.75.7-1.08.33-.33.64-.53 1.08-.7.33-.12.83-.26 1.74-.3 1.03-.04 1.27-.05 1.87-.05zM8 3.88a4.12 4.12 0 1 0 0 8.24 4.12 4.12 0 0 0 0-8.24zm0 1.44a2.68 2.68 0 1 1 0 5.36 2.68 2.68 0 0 1 0-5.36zm4.88-.88a.72.72 0 1 0 0 1.44.72.72 0 0 0 0-1.44z" />
+  </svg>
+);
+const HuggingFaceIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="mr-2" viewBox="0 0 24 24">
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 6.627 5.373 12 12 12s12-5.373 12-12C24 5.373 18.627 0 12 0zm0 22c-5.523 0-10-4.477-10-10S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-4.5-7.5c0-1.933 1.567-3.5 3.5-3.5s3.5 1.567 3.5 3.5h-7zm-1.5-4c-.828 0-1.5-.672-1.5-1.5S5.672 7.5 6.5 7.5 8 8.172 8 9s-.672 1.5-1.5 1.5zm9 0c-.828 0-1.5-.672-1.5-1.5S13.672 7.5 14.5 7.5 16 8.172 16 9s-.672 1.5-1.5 1.5z" />
+  </svg>
+);
+const MediumIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="mr-2" viewBox="0 0 24 24">
+    <path d="M2.01 6.5c.03-.39-.11-.77-.38-1.05L.38 3.4v-.25h5.64l4.36 9.57 3.82-9.57h5.5v.25l-1.5 1.43c-.13.1-.2.26-.17.42v11.9c-.03.16.04.32.17.42l1.46 1.43v.25h-7.87v-.25l1.52-1.48c.15-.15.15-.2.15-.42V8.1l-4.2 10.5h-.58L4.6 8.1v7.92c-.04.3.06.6.27.82l1.98 2.4v.25H.01v-.25l1.98-2.4c.2-.22.3-.52.26-.82V6.5z" />
   </svg>
 );
 
 function App() {
   const [activeSection, setActiveSection] = useState("home");
   const [darkMode, setDarkMode] = useState(false);
-  const [selectedArticle, setSelectedArticle] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -497,85 +464,10 @@ function App() {
       </section>
 
       {/* Articles Section */}
-       <div className="min-h-screen font-sans text-gray-900 dark:text-white bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 transition-colors duration-300">
-      {/* Other sections */}
-      <ArticlesSection /> {/* Add the ArticlesSection component here */}
-      {/* Other sections */}
-    </div>
-      {/* <section id="articles" className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent inline-block">Articles</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto"></div>
-          </div>
-
-          <div className="space-y-6">
-            {mockData.articles.map((article) => (
-              <div
-                key={article.id}
-                className="hover: transition-all duration-300 cursor-pointer"
-                onClick={() => setSelectedArticle(article)}
-              >
-                <div className="p-6">
-                  <div className="flex items-center mb-2">
-                    <div className="w-2 h-2 rounded-full bg-indigo-500 mr-2"></div>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">{article.date}</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-white">{article.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    {article.excerpt}
-                  </p>
-                  <button className="text-indigo-600 dark:text-indigo-400 font-medium hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors flex items-center">
-                    Read More
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 ml-1">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* Selected Article Modal */}
-      {selectedArticle && (
-        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
-          <div className="bg-white dark:bg-gray-800 w-full max-w-3xl max-h-[90vh] overflow-auto rounded-2xl p-8 relative">
-            <button
-              onClick={() => setSelectedArticle(null)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white bg-gray-100 dark:bg-gray-700 rounded-full p-2 transition-colors"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-
-            <div className="mb-6">
-              <div className="flex items-center mb-2">
-                <div className="w-2 h-2 rounded-full bg-indigo-500 mr-2"></div>
-                <span className="text-sm text-gray-500 dark:text-gray-400">{selectedArticle.date}</span>
-              </div>
-              <h2 className="text-3xl font-bold mb-4 text-gray-800 dark:text-white">{selectedArticle.title}</h2>
-            </div>
-
-            <div
-              className="prose dark:prose-invert prose-indigo max-w-none"
-              dangerouslySetInnerHTML={{ __html: selectedArticle.content }}
-            ></div>
-
-            <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-              <button
-                onClick={() => setSelectedArticle(null)}
-                className="px-6 py-2 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-700 transition-colors"
-              >
-                Back to Articles
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
+      <div className="min-h-screen font-sans text-gray-900 dark:text-white bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 transition-colors duration-300">
+        <ArticlesSection />
+      </div>
+      
       {/* Contact Section */}
       <section id="contact" className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
@@ -603,48 +495,26 @@ function App() {
                     <div className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center mr-3">
                       <GithubIcon />
                     </div>
-                    github.com/repleeka
+                    <a href="https://github.com/repleeka" target="_blank" rel="noopener noreferrer">github.com/repleeka</a>
                   </li>
                   <li className="flex items-center text-gray-700 dark:text-gray-300">
                     <div className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center mr-3">
-                      <LinkedInIcon />
+                      <HuggingFaceIcon />
                     </div>
-                    linkedin.com/in/tungondugi
+                    <a href="https://huggingface.co/repleeka" target="_blank" rel="noopener noreferrer">huggingface.co/repleeka</a>
+                    
+                  </li>
+                  <li className="flex items-center text-gray-700 dark:text-gray-300">
+                    <div className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center mr-3">
+                      <MediumIcon />
+                    </div>
+                    <a href="https://tungondugi.medium.com/" target="_blank" rel="noopener noreferrer">tungondugi.medium.com</a>
                   </li>
                 </ul>
               </div>
 
               <div className="p-6">
-                <img src={contact_img} alt="Description" />
-                {/* <h3 className="text-xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">Send a Message</h3>
-                <div className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Name</label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Email</label>
-                    <input
-                      type="email"
-                      className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-1 text-gray-700 dark:text-gray-300">Message</label>
-                    <textarea
-                      className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 h-32 resize-none"
-                      placeholder="Your message..."
-                    ></textarea>
-                  </div>
-                  <button className="w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-lg shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 transition-all duration-300">
-                    Send Message
-                  </button>
-                </div> */}
+                <img src={contact_img} alt="Contact" />
               </div>
             </div>
           </div>
@@ -655,14 +525,20 @@ function App() {
       <footer className="py-8 px-4 text-center">
         <div className="container mx-auto">
           <div className="flex justify-center space-x-6 mb-4">
-            <a href="#" className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-gray-800 flex items-center justify-center text-indigo-600 dark:text-indigo-400 hover:bg-indigo-200 dark:hover:bg-gray-700 transition-colors">
+            <a href="https://github.com/repleeka" className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-gray-800 flex items-center justify-center text-indigo-600 dark:text-indigo-400 hover:bg-indigo-200 dark:hover:bg-gray-700 transition-colors">
               <GithubIcon />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-gray-800 flex items-center justify-center text-indigo-600 dark:text-indigo-400 hover:bg-indigo-200 dark:hover:bg-gray-700 transition-colors">
-              <LinkedInIcon />
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-gray-800 flex items-center justify-center text-indigo-600 dark:text-indigo-400 hover:bg-indigo-200 dark:hover:bg-gray-700 transition-colors">
+            <a href="tungondugi@gmail.com" className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-gray-800 flex items-center justify-center text-indigo-600 dark:text-indigo-400 hover:bg-indigo-200 dark:hover:bg-gray-700 transition-colors">
               <MailIcon />
+            </a>
+            <a href="https://huggingface.co/repleeka" className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-gray-800 flex items-center justify-center text-indigo-600 dark:text-indigo-400 hover:bg-indigo-200 dark:hover:bg-gray-700 transition-colors">
+              <HuggingFaceIcon />
+            </a>
+            <a href="https://tungondugi.medium.com/" className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-gray-800 flex items-center justify-center text-indigo-600 dark:text-indigo-400 hover:bg-indigo-200 dark:hover:bg-gray-700 transition-colors">
+              <MediumIcon />
+            </a>
+            <a href="https://instagram.com/dugiyaa" className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-gray-800 flex items-center justify-center text-indigo-600 dark:text-indigo-400 hover:bg-indigo-200 dark:hover:bg-gray-700 transition-colors">
+              <InstagramIcon />
             </a>
           </div>
           <p className="text-sm text-gray-600 dark:text-gray-400">
