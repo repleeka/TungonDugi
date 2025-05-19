@@ -1,0 +1,82 @@
+/* Add this at the top of your CSS file */
+@import url('https://fonts.googleapis.com/css2?family=Product+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body, html, #root {
+  font-family: 'Product Sans', Arial, sans-serif;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent;
+}
+
+/* Animated background */
+.animated-bg {
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.1);
+}
+
+/* Prose styles for article content */
+.prose h1 {
+  @apply text-2xl font-bold mb-4 text-gray-800 dark:text-white;
+}
+
+.prose h2 {
+  @apply text-xl font-bold mb-3 mt-6 text-gray-800 dark:text-white;
+}
+
+.prose p {
+  @apply mb-4 text-gray-700 dark:text-gray-300;
+}
+
+.prose pre {
+  @apply bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto mb-4;
+}
+
+.prose code {
+  @apply bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
