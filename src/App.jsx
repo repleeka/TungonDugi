@@ -78,6 +78,36 @@ const mockData = {
       tags: ["MarianMT", "Hugging Face", "NLP", "Language Preservation"],
       liveLink: "https://huggingface.co/spaces/repleeka/tawra",
       codeLink: "https://huggingface.co/spaces/repleeka/tawra",
+    },
+    {
+      id: 4,
+      title: "GinLish Corpus v0.1.0: Tagin-English Parallel Corpus",
+      description:
+        "GinLish Corpus v0.1.0 is a multilingual parallel corpus focusing on the low-resource Tagin language (also known as Tagin Gaam) paired with English. GinLish Corpus v0.1.0 is under review and active development. It will be open-sourced soon via platforms like Hugging Face or GitHub to promote collaboration, reproducibility, and inclusive NLP for low-resource languages.",
+      image: "https://placehold.co/600x400/B51618/white?text=GinLish+Corpus+v0.1.0",
+      tags: ["Under Active Development..."],
+      liveLink: "https://github.com/repleeka/GinLish",
+      codeLink: "https://github.com/repleeka/GinLish",
+    },
+    {
+      id: 5,
+      title: "Apatani Corpus: Apatani-English Parallel Corpus",
+      description:
+        "Apatani Corpus is a multilingual parallel corpus focusing on the low-resource Apatani language (also known as Tanw Aagung) paired with English. Apatani Corpus is under review and active development. It will be open-sourced soon via platforms like Hugging Face or GitHub to promote collaboration, reproducibility, and inclusive NLP for low-resource languages.",
+      image: "https://placehold.co/600x400/BFD641/white?text=Apatani+Corpus",
+      tags: ["Under Active Development..."],
+      liveLink: "https://github.com/repleeka/GinLish",
+      codeLink: "https://github.com/repleeka/GinLish",
+    },
+    {
+      id: 6,
+      title: "Galo Corpus: Galo-English Parallel Corpus",
+      description:
+        "Galo Corpus is a multilingual parallel corpus focusing on the low-resource Galo language paired with English. Galo Corpus is under review and active development. It will be open-sourced soon via platforms like Hugging Face or GitHub to promote collaboration, reproducibility, and inclusive NLP for low-resource languages.",
+      image: "https://placehold.co/600x400/98F5F9/white?text=Galo+Corpus",
+      tags: ["Under Active Development..."],
+      liveLink: "https://github.com/repleeka/GinLish",
+      codeLink: "https://github.com/repleeka/GinLish",
     }
   ],
   techStack: [
@@ -328,11 +358,11 @@ function App() {
               <div className="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
             </div>
             <div className="w-full md:w-auto">
-              <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">10+</div>
+              <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">100+</div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Projects Completed</div>
             </div>
             <div className="w-full md:w-auto">
-              <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">5+</div>
+              <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">Under-Review</div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Publications</div>
             </div>
           </div>
