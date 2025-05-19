@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "rss-parser": "^3.13.0"
   },
   "devDependencies": {
     "@eslint/config-array": "^0.20.0",

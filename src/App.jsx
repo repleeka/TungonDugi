@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ArticlesSection from './ArticlesSection';
 import myImage from './tgn.png';
 import contact_img from './contact.png';
 //Data for the portfolio
@@ -79,47 +80,47 @@ const mockData = {
       codeLink: "https://huggingface.co/spaces/repleeka/tawra",
     }
   ],
-  articles: [
-    {
-      id: 1,
-      title: "Understanding React Hooks Deeply",
-      date: "April 5, 2025",
-      excerpt:
-        "A deep dive into how React hooks work under the hood, including custom hook patterns.",
-      content: `
-        <p>React hooks are one of the most powerful features introduced in React 16.8. They allow developers to use state and other React features without writing a class component.</p>
-        <h2>useState</h2>
-        <p>The <code>useState</code> hook allows functional components to have local state. It returns a stateful value and a function to update it.</p>
-        <pre><code>const [count, setCount] = useState(0);</code></pre>
-        <h2>useEffect</h2>
-        <p>The <code>useEffect</code> hook handles side effects like data fetching, subscriptions, or manually changing the DOM in React components.</p>
-        <p>It runs after every render by default but can be optimized with dependency arrays.</p>
-        <pre><code>useEffect(() => {
-  document.title = \`You clicked \${count} times\`;
-}, [count]);</code></pre>
-        <h2>Custom Hooks</h2>
-        <p>You can create your own hooks to reuse logic across multiple components. For example, a <code>useFetch</code> hook to handle API calls.</p>
-      `,
-    },
-    {
-      id: 2,
-      title: "The Future of Web Development in 2025",
-      date: "March 18, 2025",
-      excerpt:
-        "Exploring trends shaping the future of frontend development including AI integration, faster frameworks, and better tooling.",
-      content: `
-        <p>In 2025, the web development landscape is evolving rapidly. Developers are embracing new paradigms and technologies that improve productivity and performance.</p>
-        <h2>AI-Powered Tools</h2>
-        <p>From GitHub Copilot to intelligent IDEs, AI is helping developers write code faster and more accurately.</p>
-        <h2>Edge Computing</h2>
-        <p>With platforms like Vercel and Cloudflare Workers, edge computing is becoming mainstream, enabling faster response times and better user experiences.</p>
-        <h2>Performance Optimization</h2>
-        <p>Tools like Lighthouse, Next.js, and SvelteKit are pushing performance metrics higher, ensuring websites load instantly and feel snappy.</p>
-        <h2>Conclusion</h2>
-        <p>As we move further into 2025, expect to see more innovation in tooling, collaboration between designers and developers, and smarter systems powered by machine learning.</p>
-      `,
-    },
-  ],
+//   articles: [
+//     {
+//       id: 1,
+//       title: "Understanding React Hooks Deeply",
+//       date: "April 5, 2025",
+//       excerpt:
+//         "A deep dive into how React hooks work under the hood, including custom hook patterns.",
+//       content: `
+//         <p>React hooks are one of the most powerful features introduced in React 16.8. They allow developers to use state and other React features without writing a class component.</p>
+//         <h2>useState</h2>
+//         <p>The <code>useState</code> hook allows functional components to have local state. It returns a stateful value and a function to update it.</p>
+//         <pre><code>const [count, setCount] = useState(0);</code></pre>
+//         <h2>useEffect</h2>
+//         <p>The <code>useEffect</code> hook handles side effects like data fetching, subscriptions, or manually changing the DOM in React components.</p>
+//         <p>It runs after every render by default but can be optimized with dependency arrays.</p>
+//         <pre><code>useEffect(() => {
+//   document.title = \`You clicked \${count} times\`;
+// }, [count]);</code></pre>
+//         <h2>Custom Hooks</h2>
+//         <p>You can create your own hooks to reuse logic across multiple components. For example, a <code>useFetch</code> hook to handle API calls.</p>
+//       `,
+//     },
+//     {
+//       id: 2,
+//       title: "The Future of Web Development in 2025",
+//       date: "March 18, 2025",
+//       excerpt:
+//         "Exploring trends shaping the future of frontend development including AI integration, faster frameworks, and better tooling.",
+//       content: `
+//         <p>In 2025, the web development landscape is evolving rapidly. Developers are embracing new paradigms and technologies that improve productivity and performance.</p>
+//         <h2>AI-Powered Tools</h2>
+//         <p>From GitHub Copilot to intelligent IDEs, AI is helping developers write code faster and more accurately.</p>
+//         <h2>Edge Computing</h2>
+//         <p>With platforms like Vercel and Cloudflare Workers, edge computing is becoming mainstream, enabling faster response times and better user experiences.</p>
+//         <h2>Performance Optimization</h2>
+//         <p>Tools like Lighthouse, Next.js, and SvelteKit are pushing performance metrics higher, ensuring websites load instantly and feel snappy.</p>
+//         <h2>Conclusion</h2>
+//         <p>As we move further into 2025, expect to see more innovation in tooling, collaboration between designers and developers, and smarter systems powered by machine learning.</p>
+//       `,
+//     },
+//   ],
   techStack: [
     "Python",
     "FastAPI",
@@ -496,7 +497,12 @@ function App() {
       </section>
 
       {/* Articles Section */}
-      <section id="articles" className="py-20 px-4">
+       <div className="min-h-screen font-sans text-gray-900 dark:text-white bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 transition-colors duration-300">
+      {/* Other sections */}
+      <ArticlesSection /> {/* Add the ArticlesSection component here */}
+      {/* Other sections */}
+    </div>
+      {/* <section id="articles" className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent inline-block">Articles</h2>
@@ -530,7 +536,7 @@ function App() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Selected Article Modal */}
       {selectedArticle && (
