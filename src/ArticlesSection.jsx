@@ -12,7 +12,7 @@ const ArticlesSection = () => {
     },
     {
       id: 2,
-      title: "The basic Text Vectorization Techniques",
+      title: "Basic Text Vectorization Techniques",
       date: "Jan 23, 2024",
       excerpt: "The article highlights limitations of traditional text vectorization methods like Bag-of-Words (BoW) and TF-IDF, such as loss of context, high dimensionality, and lack of semantic understanding. It suggests moving toward more advanced models like Word2Vec or BERT for better performance.",
       link: "https://tungondugi.medium.com/problems-with-the-basic-text-vectorization-techniques-e89857fe207a",
