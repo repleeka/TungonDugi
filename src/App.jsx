@@ -284,8 +284,8 @@ function App() {
                     setMenuOpen(false);
                   }}
                   className={`px-4 py-2 rounded-md capitalize ${activeSection === section
-                    ? "bg-black text-white dark:bg-white dark:text-black" // Active: Black/White based on mode
-                    : "text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800" // Inactive: Black/White text with hover
+                    ? "bg-black text-white dark:bg-white dark:text-black"
+                    : "text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
                     }`}
                 >
                   {section}
@@ -464,10 +464,10 @@ function App() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-black dark:text-white">
+                  <h3 className="text-xl font-bold mb-2 text-black dark:text-white text-justify">
                     {project.title}
                   </h3>
-                  <p className="text-gray-800 dark:text-gray-300 mb-4">
+                  <p className="text-gray-800 dark:text-gray-300 mb-4 text-justify">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
