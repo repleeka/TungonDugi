@@ -399,7 +399,7 @@ function App() {
           </div>
 
           <div className="p-8">
-            <p className="text-justify text-black dark:text-white">
+            <p className="text-justify text-gray-800 dark:text-gray-300">
               {mockData.about.summary.split('\n').map((para, idx) => (
                 <span key={idx}>
                   {para}
@@ -428,12 +428,12 @@ function App() {
                   <h3 className="text-xl font-bold mb-1 text-black dark:text-white">
                     {exp.title}
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                  <p className="text-sm text-gray-800 dark:text-gray-300 mb-3">
                     {exp.company}
                     <br />
                     ({exp.duration})
                   </p>
-                  <p className="text-gray-700 dark:text-gray-300">{exp.description}</p>
+                  <p className="text-gray-800 dark:text-gray-300">{exp.description}</p>
                 </div>
               </div>
             ))}
@@ -467,7 +467,7 @@ function App() {
                   <h3 className="text-xl font-bold mb-2 text-black dark:text-white">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  <p className="text-gray-800 dark:text-gray-300 mb-4">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -547,7 +547,7 @@ function App() {
                 <h3 className="text-xl font-bold mb-4 text-black dark:text-white">
                   Get In Touch
                 </h3>
-                <p className="mb-6 text-gray-600 dark:text-gray-300">
+                <p className="mb-6 text-gray-800 dark:text-gray-300">
                   Feel free to reach out for collaborations, job opportunities, or just a friendly chat.
                 </p>
                 <ul className="space-y-4">
@@ -596,7 +596,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="py-10 px-4 bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300">
+      <footer className="py-10 px-4 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-300">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* About Section */}
