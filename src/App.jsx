@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import ArticlesSection from './ArticlesSection';
 import myImage from './tgn.png';
-import contact_img from './contact.png';
+import contact_img_white from './contact_dark.png';
+import contact_img_black from './contact_light.png';
 //Data for the portfolio
 const mockData = {
   about: {
     name: "Tungon Dugi",
     role: "Fulltime PhD Scholar with expertise in AI and NLP.",
     summary:
-      "A dedicated researcher at the crossroads of Linguistics, Natural Language Processing, and Machine Translation, passionately working to bring low-resource languages into the digital age. With a deep fascination for how language shapes human connection, I specialize in developing cutting-edge AI models and building rich linguistic resources that preserve endangered languages and make them accessible globally.\nMy work spans from digitizing indigenous Arunachalee languages like Tagin, Nyishi, and Tawra, to designing neural machine translation systems that break communication barriers for underrepresented communities. I thrive on the challenge of transforming scarce data into powerful multilingual tools through transfer learning, corpus development, and state-of-the-art deep learning architectures. Whether I’m in the field collecting raw data, engineering NLP pipelines, or deploying interactive language models on platforms like Hugging Face Spaces, my mission remains clear: to blend technology and tradition and empower linguistic diversity through innovation.\nIf you share a passion for language, AI, and cultural preservation, or want to explore collaboration opportunities, let’s connect and create something meaningful together.",
+      "I am a researcher working at the intersection of Artificial Intelligence (AI), Linguistics, Natural Language Processing (NLP), and Machine Translation (MT), with a strong focus on low-resource and endangered languages. My work is driven by a commitment to preserving linguistic diversity and making underrepresented languages more accessible in the digital space.\nI specialize in building linguistic resources and AI-powered tools that support languages like Tagin, Nyishi, and other Tani languages (Adi, Galo, Apatani, Mising) - indigenous tongues from Arunachal Pradesh. From field data collection to developing Neural Machine Translation (NMT) systems, my research blends traditional language knowledge with cutting-edge Deep Learning (DL) methods, including Transfer Tearning and corpus development.\nWhether it's creating multilingual models, designing NLP pipelines, or sharing tools on platforms like Hugging Face, I aim to bridge the gap between technology and culture. I’m always open to collaboration with those who share an interest in language, AI, and digital inclusion.\nIf you share a passion for language, AI, and cultural preservation, or want to explore collaboration opportunities, let’s connect and create something meaningful together.",
     education: [
       {
         degree: "B.Tech. in Computer Science and Engineering",
@@ -135,7 +136,12 @@ const mockData = {
     "Label Studio",
     "Praat",
     "LaTeX",
-    "Anaconda"
+    "Anaconda",
+    "Node.js",
+    "Express.js",
+    "React.js",
+    "Next.js",
+    "Tailwind CSS",
   ],
 };
 
@@ -195,7 +201,7 @@ function App() {
   // Handle scroll to set active section
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "experience", "tech", "projects", "articles", "contact"];
+      const sections = ["home", "about", "experience", "projects", "articles", "tech", "contact"];
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -218,7 +224,8 @@ function App() {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-indigo-100 dark:border-indigo-900 shadow-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <a href="#" className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+          {/* <a href="#" className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"> */}
+          <a href="#" className="text-xl font-bold bg-black dark:bg-white bg-clip-text text-transparent">
             Tungon Dugi
           </a>
 
@@ -240,14 +247,14 @@ function App() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
-            {["home", "about", "experience", "tech", "projects", "articles", "contact"].map((section) => (
+            {["home", "about", "experience", "projects", "articles", "tech", "contact"].map((section) => (
               <a
                 key={section}
                 href={`#${section}`}
                 onClick={() => setActiveSection(section)}
                 className={`px-4 py-2 rounded-full capitalize transition-all duration-300 ${activeSection === section
-                  ? "bg-gradient-to-r from-indigo-500 to-purple-500 text-white"
-                  : "hover:bg-gray-100 dark:hover:bg-gray-800"
+                  ? "bg-black text-white dark:bg-white dark:text-black"
+                  : "hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white"
                   }`}
               >
                 {section}
@@ -277,8 +284,8 @@ function App() {
                     setMenuOpen(false);
                   }}
                   className={`px-4 py-2 rounded-md capitalize ${activeSection === section
-                    ? "bg-gradient-to-r from-indigo-500 to-purple-500 text-white"
-                    : "hover:bg-gray-100 dark:hover:bg-gray-800"
+                    ? "bg-black text-white dark:bg-white dark:text-black" // Active: Black/White based on mode
+                    : "text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800" // Inactive: Black/White text with hover
                     }`}
                 >
                   {section}
@@ -309,17 +316,17 @@ function App() {
 
       {/* Hero Section */}
       <section id="home" className="relative pt-32 pb-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-950/30 dark:to-purple-950/30 -z-10"></div>
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-indigo-300 dark:bg-indigo-700 rounded-full filter blur-3xl opacity-20 -z-10"></div>
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-purple-300 dark:bg-purple-700 rounded-full filter blur-3xl opacity-20 -z-10"></div>
+        <div className="absolute inset-0 bg-white dark:bg-gray-900 -z-10"></div>
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-black dark:bg-white rounded-full filter blur-3xl opacity-10 -z-10"></div>
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-black dark:bg-white rounded-full filter blur-3xl opacity-10 -z-10"></div>
 
         <div className="container mx-auto max-w-4xl">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/2 text-center md:text-left">
-              <div className="inline-block px-4 py-1 rounded-full bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-300 text-sm font-medium mb-4">
+              <div className="inline-block px-4 py-1 rounded-full bg-black dark:bg-white text-white dark:text-black text-sm font-medium mb-4">
                 PhD Scholar & AI Developer
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-black dark:text-white">
                 Hello, I'm Tungon Dugi
               </h1>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
@@ -328,42 +335,54 @@ function App() {
               <div className="flex flex-wrap justify-center md:justify-start gap-4">
                 <a
                   href="#projects"
-                  className="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-full shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 transition-all duration-300"
+                  className="px-6 py-3 font-semibold rounded-full shadow-lg hover:shadow-md transition-all duration-300 bg-black text-white dark:bg-white dark:text-black"
                 >
                   View My Work
                 </a>
                 <a
                   href="#articles"
-                  className="px-6 py-3 border border-indigo-600 dark:border-indigo-400 text-indigo-600 dark:text-indigo-400 font-semibold rounded-full hover:bg-indigo-50 dark:hover:bg-indigo-900/30 transition-colors"
+                  className="px-6 py-3 border border-black dark:border-white text-black dark:text-white font-semibold rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                 >
                   Read Articles
                 </a>
               </div>
             </div>
             <div className="md:w-1/2 relative">
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 p-1">
-                <div className="w-full h-full rounded-full  flex items-center justify-center overflow-hidden">
-                  <div className="text-6xl"><img src={myImage} alt="Description" /></div>
+              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-black dark:bg-white p-1">
+                <div className="w-full h-full rounded-full flex items-center justify-center overflow-hidden">
+                  <div className="text-6xl">
+                    <img src={myImage} alt="Description" />
+                  </div>
                 </div>
               </div>
               <div className="absolute -bottom-4 -right-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-3">
-                <div className="text-sm font-medium text-gray-800 dark:text-gray-200">AI & NLP Expert</div>
+                <div className="text-sm font-medium text-gray-800 dark:text-gray-200">
+                  AI & NLP Expert
+                </div>
               </div>
             </div>
           </div>
 
           <div className="mt-20 flex flex-wrap justify-center gap-8 text-center">
             <div className="w-full md:w-auto">
-              <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">6+</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
+              <div className="text-3xl font-bold text-black dark:text-white">6+</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">
+                Years Experience
+              </div>
             </div>
             <div className="w-full md:w-auto">
-              <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">100+</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Projects Completed</div>
+              <div className="text-3xl font-bold text-black dark:text-white">100+</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">
+                Projects Completed
+              </div>
             </div>
             <div className="w-full md:w-auto">
-              <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">Under-Review</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Publications</div>
+              <div className="text-3xl font-bold text-black dark:text-white">
+                Under-Review
+              </div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">
+                Publications
+              </div>
             </div>
           </div>
         </div>
@@ -373,16 +392,19 @@ function App() {
       <section id="about" className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent inline-block">About Me</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto"></div>
+            <h2 className="text-3xl font-bold mb-2 text-black dark:text-white inline-block">
+              About Me
+            </h2>
+            <div className="w-20 h-1 bg-black dark:bg-white mx-auto"></div>
           </div>
 
           <div className="p-8">
-            <p className="text-justify dark:text-gray-300">
+            <p className="text-justify text-black dark:text-white">
               {mockData.about.summary.split('\n').map((para, idx) => (
                 <span key={idx}>
                   {para}
-                  <br /><br />
+                  <br />
+                  <br />
                 </span>
               ))}
             </p>
@@ -393,40 +415,26 @@ function App() {
       <section id="experience" className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent inline-block">Experience</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto"></div>
+            <h2 className="text-3xl font-bold mb-2 text-black dark:text-white inline-block">
+              Experience
+            </h2>
+            <div className="w-20 h-1 bg-black dark:bg-white mx-auto"></div>
           </div>
 
           <div className="relative">
             {mockData.about.experience.map((exp, i) => (
               <div key={i} className="mb-3 relative">
                 <div className="p-6 text-justify">
-                  <h3 className="text-xl font-bold mb-1 text-indigo-600 dark:text-indigo-400">{exp.title}</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
-                    {exp.company}<br></br>({exp.duration})
+                  <h3 className="text-xl font-bold mb-1 text-black dark:text-white">
+                    {exp.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                    {exp.company}
+                    <br />
+                    ({exp.duration})
                   </p>
-                  <p className="dark:text-gray-300">{exp.description}</p>
+                  <p className="text-gray-700 dark:text-gray-300">{exp.description}</p>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* Tech Stack Section */}
-      <section id="tech" className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent inline-block">Tech Stack</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto"></div>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {mockData.techStack.map((tech, i) => (
-              <div
-                key={i}
-                className="bg-white dark:bg-gray-800 rounded-xl p-4 text-center shadow hover:shadow-md transform hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className="text-indigo-600 dark:text-indigo-400 font-medium">{tech}</div>
               </div>
             ))}
           </div>
@@ -436,15 +444,17 @@ function App() {
       <section id="projects" className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent inline-block">Projects</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto"></div>
+            <h2 className="text-3xl font-bold mb-2 text-black dark:text-white inline-block">
+              Projects
+            </h2>
+            <div className="w-20 h-1 bg-black dark:bg-white mx-auto"></div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {mockData.projects.map((project) => (
               <div
                 key={project.id}
-                className="overflow-hidden  transform hover:-translate-y-2 transition-all duration-300"
+                className="overflow-hidden transform hover:-translate-y-2 transition-all duration-300"
               >
                 <div className="h-48 overflow-hidden">
                   <img
@@ -454,7 +464,9 @@ function App() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-indigo-600 dark:text-indigo-400">{project.title}</h3>
+                  <h3 className="text-xl font-bold mb-2 text-black dark:text-white">
+                    {project.title}
+                  </h3>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">
                     {project.description}
                   </p>
@@ -462,7 +474,7 @@ function App() {
                     {project.tags.map((tag, i) => (
                       <span
                         key={i}
-                        className="text-xs px-3 py-1 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-300 rounded-full"
+                        className="text-xs px-3 py-1 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded-full"
                       >
                         {tag}
                       </span>
@@ -473,7 +485,7 @@ function App() {
                       href={project.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-indigo-600 dark:text-indigo-400 font-medium hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors"
+                      className="text-black dark:text-white font-medium hover:underline"
                     >
                       Live Demo
                     </a>
@@ -481,7 +493,7 @@ function App() {
                       href={project.codeLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-indigo-600 dark:text-indigo-400 font-medium hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors"
+                      className="text-black dark:text-white font-medium hover:underline"
                     >
                       Code
                     </a>
@@ -494,57 +506,89 @@ function App() {
       </section>
 
       {/* Articles Section */}
-      <div className="min-h-screen font-sans text-gray-900 dark:text-white bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 transition-colors duration-300">
+      <div className="min-h-screen font-sans text-black dark:text-white transition-colors duration-300">
         <ArticlesSection />
       </div>
-      
+      {/* Tech Stack Section */}
+      <section id="tech" className="py-20 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-2 text-black dark:text-white inline-block">
+              Tech Stack
+            </h2>
+            <div className="w-20 h-1 bg-black dark:bg-white mx-auto"></div>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {mockData.techStack.map((tech, i) => (
+              <div
+                key={i}
+                className="bg-white dark:bg-gray-800 rounded-xl p-4 text-center shadow hover:shadow-md transform hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="text-black dark:text-white font-medium">{tech}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* Contact Section */}
       <section id="contact" className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent inline-block">Contact Me</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto"></div>
+            <h2 className="text-3xl font-bold mb-2 text-black dark:text-white inline-block">
+              Contact Me
+            </h2>
+            <div className="w-20 h-1 bg-black dark:bg-white mx-auto"></div>
           </div>
 
           <div className="p-8">
-            {/* <div> */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">Get In Touch</h3>
+                <h3 className="text-xl font-bold mb-4 text-black dark:text-white">
+                  Get In Touch
+                </h3>
                 <p className="mb-6 text-gray-600 dark:text-gray-300">
                   Feel free to reach out for collaborations, job opportunities, or just a friendly chat.
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-center text-gray-700 dark:text-gray-300">
-                    <div className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center mr-3">
+                    <div className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center mr-3">
                       <MailIcon />
                     </div>
                     tungondugi@gmail.com
                   </li>
                   <li className="flex items-center text-gray-700 dark:text-gray-300">
-                    <div className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center mr-3">
+                    <div className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center mr-3">
                       <GithubIcon />
                     </div>
-                    <a href="https://github.com/repleeka" target="_blank" rel="noopener noreferrer">github.com/repleeka</a>
+                    <a href="https://github.com/repleeka" target="_blank" rel="noopener noreferrer">
+                      github.com/repleeka
+                    </a>
                   </li>
                   <li className="flex items-center text-gray-700 dark:text-gray-300">
-                    <div className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center mr-3">
+                    <div className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center mr-3">
                       <HuggingFaceIcon />
                     </div>
-                    <a href="https://huggingface.co/repleeka" target="_blank" rel="noopener noreferrer">huggingface.co/repleeka</a>
-                    
+                    <a href="https://huggingface.co/repleeka" target="_blank" rel="noopener noreferrer">
+                      huggingface.co/repleeka
+                    </a>
                   </li>
                   <li className="flex items-center text-gray-700 dark:text-gray-300">
-                    <div className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center mr-3">
+                    <div className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center mr-3">
                       <MediumIcon />
                     </div>
-                    <a href="https://tungondugi.medium.com/" target="_blank" rel="noopener noreferrer">tungondugi.medium.com</a>
+                    <a href="https://tungondugi.medium.com/" target="_blank" rel="noopener noreferrer">
+                      tungondugi.medium.com
+                    </a>
                   </li>
                 </ul>
               </div>
 
               <div className="p-6">
-                <img src={contact_img} alt="Contact" />
+                <img
+                  src={darkMode ? contact_img_white : contact_img_black}
+                  alt="Contact"
+                />
               </div>
             </div>
           </div>
@@ -552,26 +596,60 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 text-center">
+      <footer className="py-10 px-4 bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300">
         <div className="container mx-auto">
-          <div className="flex justify-center space-x-6 mb-4">
-            <a href="https://github.com/repleeka" className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-gray-800 flex items-center justify-center text-indigo-600 dark:text-indigo-400 hover:bg-indigo-200 dark:hover:bg-gray-700 transition-colors">
-              <GithubIcon />
-            </a>
-            <a href="tungondugi@gmail.com" className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-gray-800 flex items-center justify-center text-indigo-600 dark:text-indigo-400 hover:bg-indigo-200 dark:hover:bg-gray-700 transition-colors">
-              <MailIcon />
-            </a>
-            <a href="https://huggingface.co/repleeka" className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-gray-800 flex items-center justify-center text-indigo-600 dark:text-indigo-400 hover:bg-indigo-200 dark:hover:bg-gray-700 transition-colors">
-              <HuggingFaceIcon />
-            </a>
-            <a href="https://tungondugi.medium.com/" className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-gray-800 flex items-center justify-center text-indigo-600 dark:text-indigo-400 hover:bg-indigo-200 dark:hover:bg-gray-700 transition-colors">
-              <MediumIcon />
-            </a>
-            <a href="https://instagram.com/dugiyaa" className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-gray-800 flex items-center justify-center text-indigo-600 dark:text-indigo-400 hover:bg-indigo-200 dark:hover:bg-gray-700 transition-colors">
-              <InstagramIcon />
-            </a>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* About Section */}
+            <div className="text-center md:text-left">
+              <h3 className="text-lg font-bold text-black dark:text-white mb-4">About Me</h3>
+              <p className="text-sm">
+                Passionate about AI, NLP, and preserving low-resource languages. Let's connect and create something meaningful together.
+              </p>
+            </div>
+
+            {/* Social Links */}
+            <div className="text-center md:text-right">
+              <h3 className="text-lg font-bold text-black dark:text-white mb-4">Follow Me</h3>
+              <div className="flex justify-center md:justify-end space-x-4">
+                <a
+                  href="https://github.com/repleeka"
+                  className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+                >
+                  <GithubIcon />
+                </a>
+                <a
+                  href="mailto:tungondugi@gmail.com"
+                  className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+                >
+                  <MailIcon />
+                </a>
+                <a
+                  href="https://huggingface.co/repleeka"
+                  className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+                >
+                  <HuggingFaceIcon />
+                </a>
+                <a
+                  href="https://tungondugi.medium.com/"
+                  className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+                >
+                  <MediumIcon />
+                </a>
+                <a
+                  href="https://instagram.com/dugiyaa"
+                  className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+                >
+                  <InstagramIcon />
+                </a>
+              </div>
+            </div>
           </div>
-          <p className="text-sm text-gray-600 dark:text-gray-400">
+
+          {/* Divider */}
+          <div className="border-t border-gray-300 dark:border-gray-700 my-6"></div>
+
+          {/* Copyright */}
+          <p className="text-center text-sm">
             &copy; {new Date().getFullYear()} Tungon Dugi. All rights reserved.
           </p>
         </div>
